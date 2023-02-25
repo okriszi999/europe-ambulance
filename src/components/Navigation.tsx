@@ -1,5 +1,4 @@
 import { signOut, useSession } from "next-auth/react";
-import Image from "next/image";
 import { RoleEnum } from "@/schema/RoleSchema";
 import {
   ArrowRightOnRectangleIcon,
@@ -36,13 +35,13 @@ export default function Navigation() {
             className="dropdown-content menu rounded-box menu-compact mt-3 w-52 bg-base-100 p-2 shadow"
           >
             <li>
-              <a>Homepage</a>
+              <a href="/">Lista</a>
             </li>
             <li>
-              <a>Portfolio</a>
+              <a href="/case/add">Hozzáadás</a>
             </li>
             <li>
-              <a>About</a>
+              <a href="/samplers">Mintavevők</a>
             </li>
           </ul>
         </div>
@@ -56,7 +55,9 @@ export default function Navigation() {
             <div className="hidden text-right sm:block">
               <p>{user?.name?.split(" ")[0]}</p>
 
-              <p className="text-xs">{user?.role && RoleEnum[user?.role]}</p>
+              <p className="text-xs">
+                {user?.role !== undefined && RoleEnum[user?.role]}
+              </p>
             </div>
             <div className="avatar">
               <div className="circle w-8 rounded-full ring ring-primary ring-offset-2 ring-offset-base-100">

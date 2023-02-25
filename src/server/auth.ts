@@ -42,23 +42,6 @@ declare module "next-auth" {
 export const authOptions: NextAuthOptions = {
   callbacks: {
     async signIn({ profile }) {
-      const prisma = new PrismaClient();
-
-      const whitelistedUsers = await prisma.whitelistUser.findMany({});
-      if (!whitelistedUsers.some((user) => user.email === profile?.email))
-        return false;
-
-      await prisma.user.update({
-        where: {
-          email: profile?.email,
-        },
-        data: {
-          role: {
-            set: whitelistedUsers.find((user) => user.email === profile?.email)
-              ?.role,
-          },
-        },
-      });
       return true;
     },
 

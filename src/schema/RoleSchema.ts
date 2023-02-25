@@ -1,5 +1,5 @@
 export enum RoleEnum {
-  "Mintaszedő",
+  "Mintavevő",
   "Ügyintéző",
   "Adminisztrátor",
   "Vezető",

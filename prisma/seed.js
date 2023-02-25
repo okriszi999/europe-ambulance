@@ -1,13 +1,7 @@
 const { PrismaClient } = require("@prisma/client");
 const prisma = new PrismaClient();
 
-async function main() {
-  return prisma.whitelistUser.create({
-    data: {
-      email: "o.kriszi99@gmail.com",
-    },
-  });
-}
+async function main() {}
 
 main()
   .then(async () => {

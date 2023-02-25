@@ -4,17 +4,16 @@ export default function Statistics() {
       className="
       stats
     stats-vertical 
-    mx-auto mb-3 grid 
-    w-full 
+    self-center
     overflow-hidden 
     bg-primary 
     text-primary-content 
     scrollbar
     scrollbar-thin
     md:stats-horizontal
-    sm:w-3/4"
+    "
     >
-      <div className="stat w-3/4 ">
+      <div className="stat w-3/4">
         <div className="stat-title text-primary-content ">Bevétel</div>
         <div className="stat-value">228 696 431 Ft</div>
         <div className="stat-desc grid grid-cols-1 place-items-start text-primary-content sm:grid-cols-2">
