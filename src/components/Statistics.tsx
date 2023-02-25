@@ -15,9 +15,9 @@ export default function Statistics() {
     sm:w-3/4"
     >
       <div className="stat w-3/4 ">
-        <div className="stat-title text-primary-content">Bevétel</div>
+        <div className="stat-title text-primary-content ">Bevétel</div>
         <div className="stat-value">228 696 431 Ft</div>
-        <div className="stat-desc  grid grid-cols-1 place-items-start text-primary-content sm:grid-cols-2">
+        <div className="stat-desc grid grid-cols-1 place-items-start text-primary-content sm:grid-cols-2">
           <p>Utalás: 27 959 455 Ft</p>
           <p>Készpénz: 67 652 159 Ft</p>
           <p>Ismeretlen: 133 053 817 Ft</p>
