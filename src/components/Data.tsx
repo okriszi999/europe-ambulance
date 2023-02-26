@@ -35,7 +35,7 @@ export default function Data() {
                   <div className="grid grid-cols-2">
                     <div>
                       <p>Lakhely:</p>
-                      <p className="text-sm">{`${caseEl.zipCode}, ${caseEl.city} ${caseEl.address}`}</p>
+                      <p className="text-sm">{`${caseEl.client?.address?.liveZip}, ${caseEl.client?.address?.liveCity} ${caseEl.client?.address?.liveAddress}`}</p>
                     </div>
                     <div>
                       <p>Születésnap:</p>

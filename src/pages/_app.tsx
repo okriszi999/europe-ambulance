@@ -7,6 +7,8 @@ import { api } from "@/utils/api";
 import "@/styles/globals.css";
 import Container from "@/components/Container";
 import Navigation from "@/components/Navigation";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const MyApp: AppType<{ session: Session | null }> = ({
   Component,
@@ -18,6 +20,18 @@ const MyApp: AppType<{ session: Session | null }> = ({
         <Navigation />
         <Component {...pageProps} />
       </Container>
+      <ToastContainer
+        position="bottom-right"
+        autoClose={2500}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
     </SessionProvider>
   );
 };

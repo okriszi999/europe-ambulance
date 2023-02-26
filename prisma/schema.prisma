@@ -97,6 +97,7 @@ model Client {
   id          String   @id @default(cuid())
   createdAt   DateTime @default(now())
   modifiedAt  DateTime @default(now())
+  birthDay    DateTime @default(now())
   firstName   String
   lastName    String
   email       String   @unique
@@ -111,9 +112,8 @@ model Client {
 model Address {
   id             String   @id @default(cuid())
   createdAt      DateTime @default(now())
-  birthZip       Int
-  birthCity      String
-  birthAddress   String
+  
+  birthPlace     String
   billingZip     Int
   billingCity    String
   billingAddress String
@@ -135,4 +135,28 @@ model Identification {
   taj            String?
   client         Client   @relation(fields: [clientId], references: [id])
   clientId       String   @unique
+}
+
+model Sample {
+  id String @id @default(cuid())
+  createdAt      DateTime @default(now())
+  date DateTime?
+  tests Test[]
+  
+}
+
+model Test {
+  id String @id @default(cuid())
+  createdAt DateTime @default(now())
+  name String
+  price Int
+  sample Sample @relation(fields: [sampleId], references: [id])
+  sampleId String
+}
+
+model BaseTest {
+  id String @id @default(cuid())
+  createdAt DateTime @default(now())
+  name String
+  price Int
 }
